@@ -1,0 +1,166 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 62.5%;
+}
+
+* {
+  font-size: 1.8rem;
+}
+
+header .header-nav {
+  position: absolute;
+  height: 123px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+header .header-nav .container .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+header .header-nav .container .header .header-logo {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+}
+
+header .header-nav .container .header .header_navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+header .header-nav .container .header .header_navbar li {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+header .header-nav .container .header .header_navbar li a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 8px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+
+header .header-nav .container .header .header_navbar li a::after {
+  content: " ";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  border-left: 3px solid #f88c91;
+}
+
+header .header-nav .container .header .header_navbar li .header_subnav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  opacity: 0;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  visibility: hidden;
+  text-decoration: none;
+  list-style: none;
+  padding: 1.2rem 2rem;
+  width: 17rem;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+
+header .header-nav .container .header .header_navbar li .header_subnav li {
+  padding: 0.7rem 0;
+}
+
+header .header-nav .container .header .header_navbar li .header_subnav a:hover {
+  color: #000;
+}
+
+header .header-nav .container .header .header_navbar li:hover a::after {
+  opacity: 1;
+}
+
+header .header-nav .container .header .header_navbar li:hover .header_subnav {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  background-color: #f88c91;
+}
+
+header .header-nav .container .header .form-search form {
+  position: relative;
+  margin: 0 2rem;
+}
+
+header .header-nav .container .header .form-search form input {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  padding: 0.5rem 1.5rem;
+  width: 28rem;
+  outline: none;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+
+header .header-nav .container .header .form-search.open-search input {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+header .header-nav .container .header button {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+}
+
+header .thumb-header-image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+/*# sourceMappingURL=index.css.map */

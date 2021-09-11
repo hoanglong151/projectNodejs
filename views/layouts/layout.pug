@@ -1,0 +1,60 @@
+//- layout.pug
+//- https://premiumlayers.com/html/royalbakery/?search=%C3%A1da
+html
+  head
+    link(href='https://meyerweb.com/eric/tools/css/reset/reset200802.css')
+    link(rel='stylesheet', href='https://pro.fontawesome.com/releases/v5.10.0/css/all.css', integrity='sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p', crossorigin='anonymous')
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU', crossorigin='anonymous')
+    link(rel='stylesheet' type='text/css' href='./css/index.css')
+  header
+    .header-nav
+      .container
+        .header
+          a(href='#')
+            img.header-logo(src='./images/logo.jpg')
+          ul.header_navbar
+            li 
+              a(href='#') Category
+              ul.header_subnav
+                li 
+                  a(href='#') bánh kem 
+                li 
+                  a(href='#') bánh su 
+                li 
+                  a(href='#') bánh bò
+            li 
+              a(href='#') Product 
+            li 
+              a(href='#') About 
+            li 
+              a(href='#') Contact
+          .form-search
+            form(action="", method="post")
+              input(type="text", name="search", placeholder="Nhập từ khóa")
+              button.btn-search 
+                i.fas.fa-search
+          button
+            i.fas.fa-shopping-cart
+    .thumb-header
+      img.thumb-header-image(src='https://premiumlayers.com/html/royalbakery/images/slider-1.jpg')
+  body
+    block content
+  footer
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js', integrity='sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ', crossorigin='anonymous')
+    script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js', integrity='sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN', crossorigin='anonymous')
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js', integrity='sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/', crossorigin='anonymous')
+    script.
+      const btnSearch = document.querySelector('.btn-search');
+      const textSearch = document.querySelector('input[name="search"]');
+      const formSearch = document.querySelector('.form-search');
+      btnSearch.onclick = (e) => {
+        if(textSearch.value === ''){
+          formSearch.classList.toggle('open-search');
+          e.preventDefault();
+        }
+      }
+      window.onclick = (e) => {
+        if(e.target.closest('.form-search') == null){
+          formSearch.classList.remove('open-search');
+        }
+      }
