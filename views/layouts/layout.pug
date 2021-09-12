@@ -2,51 +2,80 @@
 //- https://premiumlayers.com/html/royalbakery/?search=%C3%A1da
 html
   head
+    meta(name='viewport', content='width=device-width, initial-scale=1')
     link(href='https://meyerweb.com/eric/tools/css/reset/reset200802.css')
     link(rel='stylesheet', href='https://pro.fontawesome.com/releases/v5.10.0/css/all.css', integrity='sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p', crossorigin='anonymous')
-    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU', crossorigin='anonymous')
+    link(rel='preconnect', href='https://fonts.googleapis.com')
+    link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap', rel='stylesheet')
     link(rel='stylesheet' type='text/css' href='./css/index.css')
   header
-    .header-nav
-      .container
-        .header
-          a(href='#')
-            img.header-logo(src='./images/logo.jpg')
-          ul.header_navbar
-            li 
-              a(href='#') Category
-              ul.header_subnav
-                li 
-                  a(href='#') bánh kem 
-                li 
-                  a(href='#') bánh su 
-                li 
-                  a(href='#') bánh bò
-            li 
-              a(href='#') Product 
-            li 
-              a(href='#') About 
-            li 
-              a(href='#') Contact
-          .form-search
-            form(action="", method="post")
-              input(type="text", name="search", placeholder="Nhập từ khóa")
-              button.btn-search 
-                i.fas.fa-search
+    .header_main
+      //- Menu mobile
+      .header_menu-mobile
+        ul.header_navbar
+          li 
+            a(href='#') 
+              span Category
+              i.fas.fa-chevron-down.btn-dropdown-menu-mobile
+            ul.header_subnav
+              li 
+                a(href='#') bánh kem 
+              li 
+                a(href='#') bánh su 
+              li 
+                a(href='#') bánh bò
+          li 
+            a(href='#') 
+              span Product
+          li 
+            a(href='#') 
+              span About
+          li 
+            a(href='#') 
+              span Contact
+      .container.header
+        a(href='#')
+          img.header_logo(src='./images/logo.jpg')
+        ul.header_navbar
+          li 
+            a(href='#') Category
+            ul.header_subnav
+              li 
+                a(href='#') bánh kem 
+              li 
+                a(href='#') bánh su 
+              li 
+                a(href='#') bánh bò
+          li 
+            a(href='#') Product 
+          li 
+            a(href='#') About 
+          li 
+            a(href='#') Contact
+        .header_form-search
+          form(action="", method="post")
+            input(type="text", name="search", placeholder="Nhập từ khóa")
+            button.header_btn-search 
+              i.fas.fa-search
           button
             i.fas.fa-shopping-cart
-    .thumb-header
-      img.thumb-header-image(src='https://premiumlayers.com/html/royalbakery/images/slider-1.jpg')
+          button.menu-mobile
+            i.fas.fa-bars
+  .thumb-header
+    img.thumb-header-image(src='https://premiumlayers.com/html/royalbakery/images/slider-1.jpg')
   body
     block content
   footer
-    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js', integrity='sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ', crossorigin='anonymous')
-    script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js', integrity='sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN', crossorigin='anonymous')
-    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js', integrity='sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/', crossorigin='anonymous')
     script.
-      const btnSearch = document.querySelector('.btn-search');
-      const textSearch = document.querySelector('input[name="search"]');
-      const formSearch = document.querySelector('.form-search');
+      const $ = document.querySelector.bind(document);
+      const $$ = document.querySelectorAll.bind(document)
+      const btnSearch = $('.header_btn-search');
+      const textSearch = $('input[name="search"]');
+      const formSearch = $('.header_form-search');
+      const menuMobile = $('.menu-mobile');
+      const headerMenuMobile = $('.header_menu-mobile');
+      const btndropdownMenumobile = $$('.btn-dropdown-menu-mobile');
       btnSearch.onclick = (e) => {
         if(textSearch.value === ''){
           formSearch.classList.toggle('open-search');
@@ -54,7 +83,18 @@ html
         }
       }
       window.onclick = (e) => {
-        if(e.target.closest('.form-search') == null){
+        if(e.target.closest('.header_form-search') == null){
           formSearch.classList.remove('open-search');
         }
       }
+      btndropdownMenumobile.forEach(value => {
+        value.onclick = (e) => {
+          if(e.target.closest('li') != null){
+            e.target.closest('li').classList.toggle('open-menu');
+          }
+        }
+      })
+      menuMobile.onclick = (e) => {
+        headerMenuMobile.classList.toggle('open-menu-mobile');
+      }
+
