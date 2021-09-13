@@ -1,0 +1,99 @@
+.about{
+  margin-top: 6rem;
+
+  &_experience-cooker{
+    margin: 8rem 0 5rem;
+  }
+  &_experience-cooker h1{
+    display: inline-block;
+    font-size: 6rem;
+    color: $bgcMain;
+    font-weight: 700;
+  }
+  &_experience-cooker span{
+    font-size: 4rem;
+    margin-left: 2rem;
+  }
+  &_about-cooker h2{
+    font-family: 'Playball', cursive;
+    font-size: 4.5rem;
+    color: $bgcMain;
+  }
+}
+
+.festival{
+  position: relative;
+  background: url('https://premiumlayers.com/html/royalbakery/images/festival-bg.jpg') no-repeat;
+  height: 80%;
+
+  &_content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 6rem 6.5rem;
+    background-color: $textHeader;
+    max-width: 64rem;
+  }
+  &_content::before{
+    content: '';
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    border: 2px solid $bgcMain;
+    z-index: -1;
+  }
+}
+.festival_chosen{
+  position: relative;
+  height: 14rem;
+  background-color: #ffbb63;
+
+  &-list{
+    display: flex;
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    justify-content: space-between;
+    min-width: 690px;
+  }
+
+  &-list li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+  }
+  &-list button{
+    background-color: #3b3b3b;
+    border-radius: 100%;
+    height: 10rem;
+    width: 10rem;
+    border: 6px solid #fff;
+    transition: all 0.5s linear;
+  }
+  &-list button:hover{
+    background-color: $bgcMain;
+  }
+  &-list p{
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $textHeader;
+    text-transform: uppercase;
+    margin-top: 2rem;
+  }
+}
+
+.festival::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
