@@ -155,6 +155,12 @@ html {
   margin: 2rem 0;
 }
 
+h2 {
+  font-family: 'Playball', cursive;
+  font-size: 4.5rem;
+  color: #f88c91;
+}
+
 .header_main {
   position: absolute;
   z-index: 10;
@@ -486,13 +492,7 @@ button {
 
 .about_experience-cooker span {
   font-size: 4rem;
-  margin-left: 2rem;
-}
-
-.about_about-cooker h2 {
-  font-family: 'Playball', cursive;
-  font-size: 4.5rem;
-  color: #f88c91;
+  margin-left: 1rem;
 }
 
 .festival {
@@ -521,6 +521,16 @@ button {
   right: 5px;
   border: 2px solid #f88c91;
   z-index: -1;
+}
+
+.festival::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .festival_chosen {
@@ -583,7 +593,124 @@ button {
   margin-top: 2rem;
 }
 
-.festival::before {
+.product {
+  margin: 12rem 0 16rem;
+}
+
+.product_our-menu {
+  text-align: center;
+  padding: 0 25%;
+}
+
+.product_our-menu h5 {
+  margin-top: 1rem;
+}
+
+.product_our-menu img {
+  margin: 3rem 0;
+}
+
+.product_our-menu p {
+  line-height: 2.5rem;
+  margin-bottom: 6rem;
+}
+
+.product_list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  margin: 0 2rem;
+}
+
+.product_item {
+  position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fafafa;
+  padding-left: 33rem;
+  padding-top: 4rem;
+  padding-right: 4rem;
+  padding-bottom: 3rem;
+}
+
+.product_item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-left: 4px solid #f88c91;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+
+.product_item:hover::before {
+  opacity: 1;
+}
+
+.product_item-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.product_item-info h5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.product_item-info span {
+  color: #f88c91;
+  font-size: 1.4rem;
+  text-align: right;
+}
+
+.product_item-info p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+  line-height: 2.5rem;
+}
+
+.product_item-info a {
+  background-color: unset;
+  border: 2px solid #f88c91;
+  color: #000;
+  padding: 1rem 4rem;
+}
+
+.product_item-info a:hover {
+  background-color: #f88c91;
+  color: #fff;
+  padding: 1rem 4rem;
+}
+
+.info-cookers {
+  position: relative;
+  background: url("https://premiumlayers.com/html/royalbakery/images/team-bg.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+.info-cookers::before {
   content: '';
   position: absolute;
   top: 0;
@@ -591,5 +718,67 @@ button {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+.info-cookers_cooker {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10rem 20rem 0;
+}
+
+.info-cookers_cooker-content .content, .info-cookers_cooker-content {
+  color: #fff;
+}
+
+.info-cookers_cooker-content {
+  margin-left: 12rem;
+}
+
+.info-cookers_cooker-content p {
+  margin-bottom: 0;
+}
+
+.info-cookers_cooker-content .name-cooker {
+  margin: 2rem 0 1rem;
+}
+
+.info-cookers_cooker-content .content {
+  font-size: 1.3rem;
+  line-height: 2.5rem;
+}
+
+.info-cookers_cooker-content .phone-cooker,
+.info-cookers_cooker-content .email-cooker {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.info-cookers_cooker-content > a i {
+  color: #59d4f0;
+  margin-right: 1rem;
+}
+
+.info-cookers_cooker-content .social {
+  margin-bottom: 2rem;
+}
+
+.info-cookers_cooker-content .social a {
+  color: #fff;
+  margin-right: 1.5rem;
+  -webkit-transition: color 0.25s linear;
+  transition: color 0.25s linear;
+}
+
+.info-cookers_cooker-content .social a:hover {
+  color: #59d4f0;
 }
 /*# sourceMappingURL=index.css.map */
