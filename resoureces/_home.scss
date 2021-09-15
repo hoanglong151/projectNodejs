@@ -104,7 +104,6 @@
     margin: 3rem 0;
   }
   &_our-menu p{
-    line-height: 2.5rem;
     margin-bottom: 6rem;
   }
   &_list{
@@ -160,7 +159,6 @@
     overflow: hidden;
     font-size: 1.4rem;
     margin-top: 1.5rem;
-    line-height: 2.5rem;
   }
   &_item-info a{
     background-color: unset;
@@ -208,7 +206,6 @@
   }
   &_cooker-content .content{
     font-size: 1.3rem;
-    line-height: 2.5rem;
   }
   &_cooker-content .phone-cooker,
   &_cooker-content .email-cooker{
@@ -232,6 +229,231 @@
   }
   &_cooker-content .social a:hover{
     color: #59d4f0;
+  }
+}
+// Choose Favourite
+.choose-favour{
+  display: flex;
+  position: relative;
+  &_image{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  &_body{
+    margin-top: 12rem;
+    margin-left: 10rem;
+    margin-bottom: 15rem;
+    text-align: center;
+    z-index: 1;
+    width: 45%;
+  }
+  &_content img{
+    margin: 3rem 0;
+  }
+  &_content p{
+    font-size: 1.4rem;
+    margin-bottom: 6rem;
+  }
+  &_form .form-input{
+    row-gap: 3rem;
+  }
+  &_form input,
+  &_form select{
+    width: 100%;
+    padding: 1rem 2rem;
+    border: 1px solid #d1d1d1;
+    outline: none;
+  }
+  &_form select{
+    color: #bcc3d6;
+  }
+  &_form button{
+    margin: 4.5rem 0;
+    padding: 1rem 3.5rem;
+    font-size: 1.4rem
+  }
+  ::placeholder,
+  ::selection{
+    color: #bcc3d6;
+    font-size: 1.3rem
+  }
+  &_contact span{
+    color: $bgcMain;
+    font-weight: 600;
+  }
+  &_contact a{
+    text-decoration: none;
+    color: #59d4f0;
+    font-weight: 600;
+  }
+}
+
+// Counter box
+.counter-box{
+  position: relative;
+  background: url('https://premiumlayers.com/html/royalbakery/images/counter-bg.jpg') no-repeat;
+  background-size: cover;
+  padding: 8rem 0;
+  text-align: center;
+  &_counters{
+    display: flex;
+    justify-content: space-around;
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8)
+  }
+  &_counter{
+    position: relative;
+    color: $textHeader;
+    z-index: 1;
+  }
+  &_counter span{
+    position: relative;
+    font-size: 6rem;
+    font-weight: 600;
+    padding-right: 1.5rem;
+    padding-top: 2rem;
+    letter-spacing: 0.5rem;
+  }
+  &_counter span::before{
+    content: '';
+    position: absolute;
+    border-top: 2px solid $bgcMain;
+    width: 4.5rem;
+    right: 1.5rem;
+  }
+  &_counter i{
+    position: absolute;
+    top: 20%;
+    left: 100%;
+    font-size: 3.5rem;
+    color: #59d4f0;
+  }
+  &_counter h5{
+    font-size: 1.5rem;
+    color: $bgcMain
+  }
+}
+// Lastest Post
+.lastest-post{
+  margin: 12rem 0;
+  & .btn-view-all{
+    text-align: center;
+    margin-top: 2rem;
+  }
+  &_content{
+    background-color:#f6f6f6;
+    margin-top: 2rem;
+    transition: all 0.5s linear;
+  }
+  &_content:hover{
+    background-color: rgba(255, 255, 255, 255);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2)
+  }
+  &_item{
+    padding: 0 2rem;
+  }
+  &_heading{
+    display: flex;
+  }
+  &_list{
+    display: flex;
+  }
+  &_title{
+    text-align: center;
+    padding: 0 18rem;
+    margin-bottom: 6rem;
+  }
+  &_title img{
+    margin: 3rem;
+  }
+  &_date{
+    background-color: #59d4f0;
+    padding: 1.5rem 2rem;
+    text-align: center;
+  }
+  &_date span{
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin: 0;
+    display: block;
+  }
+  &_date span:first-child{
+    line-height: 4rem;
+
+  }
+  &_date span:last-child{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    line-height: 1rem
+  }
+  &_blog{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 1.5rem;
+  }
+  &_blog a{
+    text-decoration: none;
+    margin-bottom: 1rem;
+    color: #000;
+  }
+  &_blog > a{
+    font-weight: 600;
+    color: #000;
+    transition: color 0.5s linear;
+  }
+  &_blog > a:hover{
+    color: $bgcMain;
+  }
+  &_utility i,
+  &_utility span{
+    font-size: 1.1rem;
+  }
+  &_utility i{
+    color: #f8a6b0;
+  }
+  &_utility span{
+    padding-left: 0.5rem;
+    color: #8a8a8a;
+  }
+  &_content-content{
+    padding: 2rem;
+  }
+  &_content-content p{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  &_content-content a,
+  &_content-content i{
+    text-decoration: none;
+    color: $bgcMain;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding-right: 0.5rem;
+  }
+  &_content-content i{
+    transform: translateX(0);
+    transition: all 0.5s linear;
+  }
+  &_content-content a:hover{
+    color: #59d4f0;
+  }
+  &_content-content a:hover i{
+    color: #59d4f0;
+    transform: translateX(0.5rem);
   }
 }
 

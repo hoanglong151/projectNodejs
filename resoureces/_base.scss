@@ -18,6 +18,7 @@
 .content{
   font-size: 1.4rem;
   color: $textContent;
+  line-height: 2.5rem;
 }
 .img-mr{
   margin: 2rem 0;
@@ -26,4 +27,7 @@ h2{
   font-family: 'Playball', cursive;
   font-size: 4.5rem;
   color: $bgcMain;
+}
+.col-md-6{
+  padding: 0 1.5rem;
 }

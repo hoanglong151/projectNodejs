@@ -1,0 +1,131 @@
+.footer{
+  background-color: #111;
+  &-peseudo{
+    position: relative;
+  }
+  &-subcribe{
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffbb63;
+    padding: 3rem 4rem 3rem 10rem;
+  }
+  &-subcribe h5{
+    font-family: 'Poppins', sans-serif;
+    color: $textHeader;
+  }
+  &-form input{
+    padding: 1.5rem 2.5rem;
+    outline: none;
+    border: none;
+    border-radius: 0.2rem;
+  }
+  &-form{
+    display: flex;
+    align-items: center;
+    min-width: 60rem;
+  }
+  &-form i{
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    font-size: 2rem;
+    transform: translateY(-50%);
+  }
+  &-form button{
+    margin: 0;
+    border-radius: 0.2rem;
+  }
+  &-form_input{
+    display: inline-block;
+    position: relative;
+    flex-grow: 1;
+    margin-right: 2rem;
+    border-radius: 1rem;
+  }
+  &-form_input input{
+    width: 100%;
+  }
+}
+.footer-list{
+  display: flex;
+  gap: 8rem;
+  &_item {
+    text-align: center;
+    margin: 12rem 0 8rem;
+  }
+  &_item h5{
+    color: $textHeader;
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+  }
+  &_item .contact{
+    background-color: transparent;
+    border: 1px solid $textHeader;
+    padding: 1rem 4rem;
+  }
+  &_item .order-now{
+    background-color: #59d4f0;
+    color: #000;
+    padding: 1rem 4rem;
+  }
+  &_item .order-now:hover{
+    background-color: $textHeader;
+  }
+  &_item .contact:hover{
+    background-color: $textHeader;
+    border: 1px solid #000;
+  }
+  &_item &_link{
+    margin-top: 1.6rem;
+  }
+  &_item &_link a{
+    display: inline-block;
+    background-color:#4a4a4a;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    padding: 1rem;
+    margin: 0 1rem;
+    transition: all 0.5s linear;
+  }
+  &_item &_link a:hover{
+    background-color: #59d4f0;
+  }
+  &_item &_link a:hover i{
+    color: #000;
+  }
+}
+.copyrights {
+  background-color: #000;
+  &_content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+  }
+  &_content p{
+    margin: 0;
+  }
+  &_content p,
+  & .footer_breadcrumb span,
+  & .footer_breadcrumb a{
+    font-size: 1.3rem;
+    color: #8e8e8f;
+    transition: all 0.5s linear;
+  }
+  & .footer_breadcrumb a{
+    text-decoration: none;
+    margin-left: 0.5rem;
+  }
+  & .footer_breadcrumb span{
+    margin-left: 3rem;
+  }
+  & .footer_breadcrumb a:hover{
+    color: #59d4f0;
+  }
+}

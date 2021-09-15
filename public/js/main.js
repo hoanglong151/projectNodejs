@@ -7,6 +7,7 @@ const menuMobile = $('.menu-mobile');
 const headerMenuMobile = $('.header_menu-mobile');
 const headerMain = $('.header_main');
 const btndropdownMenumobile = $$('.btn-dropdown-menu-mobile');
+const counters = $$('.counter');
 // Open Search
 btnSearch.onclick = (e) => {
   if(textSearch.value === ''){
@@ -35,4 +36,19 @@ menuMobile.onclick = (e) => {
 // Scroll window show header sticky
 document.addEventListener('scroll', (e) =>{
   window.scrollY > 600 ? headerMain.classList.add('sticky') : headerMain.classList.remove('sticky')
+})
+// Counter
+counters.forEach(counter => {
+  let speed = 1000;
+  (function updateCounter(){
+    let value = +counter.getAttribute('data-target') ;
+    let getValue = +counter.innerText;
+    let inc = Math.ceil(value / speed);
+    if(getValue < value){
+      counter.innerText = getValue + inc;
+      setTimeout(updateCounter, 0);
+    }else{
+      counter.innerText = value;
+    }
+  })()
 })
