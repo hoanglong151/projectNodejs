@@ -5,7 +5,7 @@ const textSearch = $('input[name="search"]');
 const formSearch = $('.header_form-search');
 const menuMobile = $('.menu-mobile');
 const headerMenuMobile = $('.header_menu-mobile');
-const headerMain = $('.header_main');
+const headerBlock = $('.header_block');
 const btndropdownMenumobile = $$('.btn-dropdown-menu-mobile');
 const counters = $$('.counter');
 // Open Search
@@ -35,11 +35,11 @@ menuMobile.onclick = (e) => {
 }
 // Scroll window show header sticky
 document.addEventListener('scroll', (e) =>{
-  window.scrollY > 600 ? headerMain.classList.add('sticky') : headerMain.classList.remove('sticky')
+  window.scrollY > 600 ? headerBlock.classList.add('sticky') : headerBlock.classList.remove('sticky')
 })
 // Counter
 counters.forEach(counter => {
-  let speed = 1000;
+  let speed = 100;
   (function updateCounter(){
     let value = +counter.getAttribute('data-target') ;
     let getValue = +counter.innerText;

@@ -14,13 +14,43 @@ html
     link(href='https://fonts.googleapis.com/css2?family=Playball&display=swap', rel='stylesheet')
     link(rel='stylesheet' type='text/css' href='./css/index.css')
   header
-    .header_main
-      .container.header
-        a(href='#')
-          img.header_logo(src='https://premiumlayers.com/html/royalbakery/images/slider-ic.png')
+    .header_block
+      .header_main
+        .container.header
+          a(href='#')
+            img.header_logo(src='https://premiumlayers.com/html/royalbakery/images/slider-ic.png')
+          ul.header_navbar
+            li 
+              a(href='#') Category
+              ul.header_subnav
+                li 
+                  a(href='#') bánh kem 
+                li 
+                  a(href='#') bánh su 
+                li 
+                  a(href='#') bánh bò
+            li 
+              a(href='#') Product 
+            li 
+              a(href='#') About 
+            li 
+              a(href='#') Contact
+          .header_form-search
+            form(action="", method="post")
+              input(type="text", name="search", placeholder="Nhập từ khóa")
+              button.header_btn-search 
+                i.fas.fa-search
+            button
+              i.fas.fa-shopping-cart
+            button.menu-mobile
+              i.fas.fa-bars
+
+      //- Menu mobile
+      .header_menu-mobile
         ul.header_navbar
           li 
             a(href='#') Category
+            i.fas.fa-chevron-down.btn-dropdown-menu-mobile
             ul.header_subnav
               li 
                 a(href='#') bánh kem 
@@ -29,44 +59,14 @@ html
               li 
                 a(href='#') bánh bò
           li 
-            a(href='#') Product 
+            a(href='#') 
+              span Product
           li 
-            a(href='#') About 
+            a(href='#') 
+              span About
           li 
-            a(href='#') Contact
-        .header_form-search
-          form(action="", method="post")
-            input(type="text", name="search", placeholder="Nhập từ khóa")
-            button.header_btn-search 
-              i.fas.fa-search
-          button
-            i.fas.fa-shopping-cart
-          button.menu-mobile
-            i.fas.fa-bars
-
-    //- Menu mobile
-    .header_menu-mobile
-      ul.header_navbar
-        li 
-          a(href='#') 
-            span Category
-            i.fas.fa-chevron-down.btn-dropdown-menu-mobile
-          ul.header_subnav
-            li 
-              a(href='#') bánh kem 
-            li 
-              a(href='#') bánh su 
-            li 
-              a(href='#') bánh bò
-        li 
-          a(href='#') 
-            span Product
-        li 
-          a(href='#') 
-            span About
-        li 
-          a(href='#') 
-            span Contact
+            a(href='#') 
+              span Contact
 
   //- Main Carosel
   #carouselExampleCaptions.carousel.slide.carousel-fade(data-bs-ride='carousel')

@@ -2,13 +2,15 @@
   position: absolute;
   z-index: 10;
   width: 100%;
-  height: 123px;
   background-color: rgba(0, 0, 0, 0.8);
 }
-.header_main.sticky{
+.header_block.sticky{
   position: fixed;
   background-color: rgba(0, 0, 0, 1);
   animation: stickyIn 0.5s linear;
+  width: 100%;
+  z-index: 9999;
+  height: 123px;
 }
 @keyframes stickyIn{
   from{
@@ -27,7 +29,7 @@
 
   &_logo{
     object-fit: cover;
-    height: 100%;
+    height: 80%;
     background: transparent;
   }
 
@@ -46,14 +48,15 @@
       position: relative;
       display: flex;
       align-items: center;
-      height: 100%; 
+      height: 100%;
+      padding: 1rem 0;
   }
 
   &_navbar a{
+    display: block;
     position: relative;
     color: $textHeader;
     text-decoration: none;
-    padding: 0 8px;
     align-items: center;
     transition: all 0.25s linear;
   }
@@ -63,7 +66,7 @@
     position: absolute;
     opacity: 0;
     top: 0;
-    left: 0;
+    left: -1rem;
     width: 4px;
     height: 100%;
     border-left: 3px solid $bgcMain;
@@ -140,7 +143,6 @@
   background-color: #000;
   max-height: 0;
   width: 100%;
-  top: 100%;
   transform-origin: top;
   transform: scaleY(0);
   visibility: hidden;
@@ -157,6 +159,9 @@ button{
   .container{
     max-width: 900px
   }
+  .header_block.sticky{
+    height: 8rem;
+  }
   .header{
     height: 80px;
     justify-content: space-between;
@@ -168,9 +173,6 @@ button{
 }
 
 @media screen and (max-width: 767px) {
-  .header_main{
-    height: 80px;
-  }
   .header .menu-mobile{
     display: block;
     margin-left: 2rem;
@@ -178,7 +180,9 @@ button{
   .header{
     height: 80px;
     justify-content: space-between;
-
+    &_logo{
+      height: 70%;
+    }
     & .header_navbar{
       display: none
     }
@@ -199,14 +203,13 @@ button{
       padding-top: 1rem;
       border-top: 1px solid $bgcMain;
     }
-    & .header_navbar a{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      padding: 1rem 0;
+    & .open-menu{
+      padding-bottom: 0;
     }
-    & .header_navbar a i{
+    & .header_navbar i{
+      position: absolute;
+      right: 0;
+      top: 10px;
       background-color: $bgcMain;
       width: 25px;
       height: 25px;

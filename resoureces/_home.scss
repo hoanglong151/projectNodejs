@@ -1,6 +1,11 @@
 .about{
   margin-top: 6rem;
-
+  &_image-cooker{
+    width: 100%;
+  }
+  &_image-cooker img{
+    width: 100%;
+  }
   &_experience-cooker{
     margin: 8rem 0 5rem;
   }
@@ -28,7 +33,7 @@
     transform: translate(-50%, -50%);
     padding: 6rem 6.5rem;
     background-color: $textHeader;
-    max-width: 64rem;
+    width: 64rem;
   }
   &_content::before{
     content: '';
@@ -109,8 +114,8 @@
   &_list{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 2rem;
-    margin: 0 2rem;
+    grid-gap: 3rem;
+    margin: 0 3rem;
   }
   &_item{
     position: relative;
@@ -262,7 +267,7 @@
   &_form input,
   &_form select{
     width: 100%;
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
     border: 1px solid #d1d1d1;
     outline: none;
   }
@@ -299,7 +304,7 @@
   text-align: center;
   &_counters{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   &::after{
     content: '';
@@ -361,6 +366,9 @@
   &_item{
     padding: 0 2rem;
   }
+  &_item img{
+    width: 100%;
+  }
   &_heading{
     display: flex;
   }
@@ -400,7 +408,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding-left: 1.5rem;
+    padding: 1rem 1rem 0 1.5rem;
   }
   &_blog a{
     text-decoration: none;
@@ -408,6 +416,10 @@
     color: #000;
   }
   &_blog > a{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     font-weight: 600;
     color: #000;
     transition: color 0.5s linear;
@@ -454,6 +466,249 @@
   &_content-content a:hover i{
     color: #59d4f0;
     transform: translateX(0.5rem);
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .about{
+    &_experience-cooker span:last-child{
+      display: block
+    }
+  }
+  .festival{
+    height: 50%;
+  }
+  .product{
+    &_item{
+      padding: 2rem 2rem 3rem 14rem
+    }
+    &_item-info p{
+      -webkit-line-clamp: 3;
+    }
+    &_our-menu{
+      padding: 0 15%
+    }
+    &_item-image img{
+      width: 30%
+    }
+  }
+  .info-cookers{
+    &_cooker{
+      padding: 10rem 8rem 0;
+    }
+    &_cooker-content{
+      margin-left: 2rem;
+    }
+  }
+  .choose-favour{
+    &_body{
+      margin: 12rem 5rem 14rem;
+      width: 100%;
+    }
+    &_image{
+      display: none
+    }
+    &_form input,
+    &_form select{
+      font-size: 1.5rem
+    }
+    ::placeholder,
+    ::selection{
+      color: #bcc3d6;
+      font-size: 1.5rem
+    }
+  }
+  .counter-box{
+    &_counters{
+      padding: 0 10rem 0 6rem;
+    }
+  }
+  .lastest-post{
+    &_date{
+      padding: 1rem 1.5rem;
+    }
+    &_blog a{
+      font-size: 1.4rem
+    }
+  }
+}
+
+@media screen and (max-width: 1023px){
+  .about{
+    padding: 0 2rem;
+    margin: 6rem 0;
+    &_experience-cooker{
+      margin-bottom: 2rem;
+    }
+    &_experience-cooker h1{
+      font-size: 5rem;
+    }
+    &_experience-cooker span{
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+    &_about-cooker h5{
+      font-size: 2.2rem
+    }
+    &_about-cooker p{
+      font-size: 1.35rem;
+    }
+    &_about-cooker a{
+      padding: 1.2rem 4.5rem;
+    }
+  }
+  .festival{
+    height: 60%;
+  }
+  .product{
+    &_our-menu{
+      padding: 0 5%;
+    }
+    &_list{
+      grid-template-columns: 1fr;
+      margin: 0 2rem;
+    }
+    &_item{
+      padding: 3rem 2rem 3rem 33rem;
+    }
+    &_item-image img{
+      width: 45%;
+    }
+  }
+  .info-cookers{
+    &_cooker{
+      padding: 10rem 2rem 5rem;
+    }
+    &_cooker-image,
+    &_cooker-content{
+      width: 50%;
+    }
+    &_cooker-image img{
+      width: 100%;
+    }
+    .carousel-control-prev i,
+    .carousel-control-next i{
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      font-size: 20px;
+      left: 0;
+    }
+    .carousel-control-prev{
+      left: 0;
+    }
+    .carousel-control-next{
+      right: 0;
+    }
+  }
+
+  .choose-favour{
+    &_body{
+      margin: 12rem 2rem 14rem;
+    }
+  }
+  .counter-box{
+    &_counters{
+      flex-wrap: wrap;
+    }
+    &_counter{
+      width: 50%
+    }
+    &_counter i{
+      left: unset;
+    }
+    &_counter h5{
+      margin-bottom: 5rem;
+    }
+  }
+  .lastest-post{
+    &_title{
+      padding: 0px 2rem;
+    }
+    &_list{
+      flex-wrap: wrap;
+      row-gap: 4rem;
+    }
+    &_item{
+      width: 50%;
+    }
+    &_content{
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about{
+    &-item{
+      width: 100%;
+    }
+    &_experience-cooker{
+      text-align: center;
+    }
+  }
+  .festival{
+    height: 90%;
+    &_content{
+      width: 30rem;
+      padding: 6rem 5rem;
+    }
+    &_chosen-list {
+      min-width: 36rem;
+    }
+    &_chosen-list li:nth-child(n + 4){
+      display: none;
+    }
+  }
+  .product{
+    &_item{
+      padding: 2rem 2rem 3rem 11rem;
+    }
+    &_item-image img{
+      width: 30%;
+    }
+    &_item-info h5{
+      flex-wrap: wrap;
+    }
+    &_item-info h5 span{
+      margin-top: 1rem;
+    }
+    &_item-info p{
+      -webkit-line-clamp: 4;
+    }
+  }
+  .info-cookers{
+    &_cooker{
+      flex-wrap: wrap;
+    }
+    &_cooker-image,
+    &_cooker-content{
+      width: 100%;
+    }
+    &_cooker-content{
+      margin-top: 4rem;
+    }
+  }
+  .choose-favour{
+    &_contact span,
+    &_contact a{
+      font-size: 1.4rem
+    }
+  }
+  .counter-box{
+    background-position: center;
+    &::after{
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+    &_counter{
+      width: 100%;
+    }
+  }
+  .lastest-post{
+    margin: 12rem 0 20rem;
+    &_item{
+      width: 100%;
+    }
   }
 }
 
