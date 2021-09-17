@@ -1,0 +1,24 @@
+extends ../../layouts/layoutAdmin
+block content
+  .section-content
+    a(href='/admin/product/create') Create New
+    .container
+      table.table
+        thead
+          tr
+            th(scope='col') #
+            th(scope='col') Name
+            th(scope='col') Price
+            th(scope='col') Quantity
+            th(scope='col') Action
+        tbody
+          tr
+            th(scope='row') 1
+            td Cake
+            td 10.000đ
+            td 2
+            td
+              a(href='#') Edit |
+              a(href='#') Detail |
+              a(href='#') Remove
+        

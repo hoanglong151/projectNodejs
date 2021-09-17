@@ -1,0 +1,250 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 1.6rem;
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+}
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.fz-18 {
+  font-size: 1.8rem;
+}
+
+.btn {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 700;
+  background-color: #f88c91;
+  padding: 1.6rem 4.5rem;
+  display: inline-block;
+  margin-top: 1.6rem;
+  text-decoration: none;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.content {
+  font-size: 1.4rem;
+  color: #777;
+  line-height: 2.5rem;
+}
+
+.img-mr {
+  margin: 2rem 0;
+}
+
+h2 {
+  font-family: 'Playball', cursive;
+  font-size: 4.5rem;
+  color: #f88c91;
+}
+
+.col-md-6 {
+  padding: 0 1.5rem;
+}
+
+.body {
+  position: relative;
+  background-color: #24222b;
+  height: 100%;
+  width: 100%;
+}
+
+.body-login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: inline-block;
+  background-color: #fff;
+  min-width: 40rem;
+  min-height: 40rem;
+  border-radius: 2rem;
+  padding: 3rem;
+}
+
+.body-login-form {
+  margin-bottom: 4rem;
+}
+
+.body-login-form input {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 1px solid black;
+  margin-bottom: 2rem;
+}
+
+.body-login-welcome {
+  margin-bottom: 3rem;
+}
+
+.body-login-welcome h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #24222b;
+  margin-bottom: 1.5rem;
+}
+
+.body-login-welcome p {
+  font-size: 2.2rem;
+  margin-bottom: 0;
+}
+
+.body-login-register p {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.body-login-register a {
+  text-decoration: none;
+}
+
+.body-login-btn {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-weight: 600;
+  background-color: #24222b;
+  color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .body-login {
+    background-color: #24222b;
+  }
+  .body-login-welcome h2,
+  .body-login-register p, .body-login-welcome {
+    color: #fff;
+  }
+  .body-login-form input {
+    background-color: #1e1c24;
+    border: 1px solid #fff;
+  }
+  .body-login-btn {
+    background-color: #fff;
+    color: #000;
+  }
+}
+
+.body {
+  position: relative;
+  background-color: #24222b;
+  height: 100%;
+  width: 100%;
+}
+
+.body-register {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: inline-block;
+  background-color: #fff;
+  min-width: 40rem;
+  min-height: 40rem;
+  border-radius: 2rem;
+  padding: 3rem;
+}
+
+.body-register-form {
+  margin-bottom: 4rem;
+}
+
+.body-register-form input {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 1px solid black;
+  margin-bottom: 2rem;
+}
+
+.body-register-welcome {
+  margin-bottom: 3rem;
+}
+
+.body-register-welcome h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #24222b;
+  margin-bottom: 1.5rem;
+}
+
+.body-register-welcome p {
+  font-size: 2.2rem;
+  margin-bottom: 0;
+}
+
+.body-register-register p {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.body-register-register a {
+  text-decoration: none;
+}
+
+.body-register-btn {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-weight: 600;
+  background-color: #24222b;
+  color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .body-register {
+    background-color: #24222b;
+  }
+  .body-register-welcome h2,
+  .body-register-register p, .body-register-welcome {
+    color: #fff;
+  }
+  .body-register-form input {
+    background-color: #1e1c24;
+    border: 1px solid #fff;
+  }
+  .body-register-btn {
+    background-color: #fff;
+    color: #000;
+  }
+}
+/*# sourceMappingURL=authenticateAdmin.css.map */

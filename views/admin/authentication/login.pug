@@ -1,0 +1,15 @@
+extends ../../layouts/authenticateAdmin
+block content
+  .body-login
+    .body-login-welcome
+      h2 Let's sign you in.
+      p Welcome back.
+      p You've been missed!
+    form(action="")
+      .body-login-form 
+        input(type="text", placeholder="User name")
+        input(type="password", placeholder="Password")
+      .body-login-register
+        p Don't have an account?
+        a(href='/admin/register') Register
+      button.body-login-btn Sign In

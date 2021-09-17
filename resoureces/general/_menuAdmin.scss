@@ -1,0 +1,39 @@
+.menu{
+  &-info{
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #fff;
+  }
+  &-manage{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 25rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+  }
+  &-manage img{
+    width: 100%;
+    height: 15%;
+    object-fit: contain;
+    padding-top: 2rem;
+  }
+  &-manage h5{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $textHeader;
+    text-align: center;
+    padding-top: 2rem;
+  }
+  &-manage h5 i{
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+  }
+}
+.section{
+  padding-left: 25rem;
+  &-content{
+    padding: 4rem;
+  }
+}
