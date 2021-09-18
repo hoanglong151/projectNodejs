@@ -5,6 +5,8 @@ const Bake = new Schema({
   name: { type: String },
   price: { type: Number },
   description: { type: String },
+  price: {type: Number},
+  quantity: { type: Number},
   createdAt: { type: Date, default: Date.now }
 });
 

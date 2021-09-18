@@ -5,11 +5,11 @@ block content
       h2 Let's sign you in.
       p Welcome back.
       p You've been missed!
-    form(action="")
+    form(action="/admin/register", method="post")
       .body-register-form 
-        input(type="text", placeholder="User name")
-        input(type="password", placeholder="Password")
-        input(type="password", placeholder="Confirm password")
+        input(type="text", name="name", placeholder="User name")
+        input(type="password", name="password", placeholder="Password")
+        input(type="password", name="confirmPassword", placeholder="Confirm password")
       .body-register-register
         p Already have an account?
         a(href='/admin/') Sign in

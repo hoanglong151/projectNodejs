@@ -117,4 +117,8 @@ h2 {
 .section-content {
   padding: 4rem;
 }
-/*# sourceMappingURL=admin.css.map */
+
+form a {
+  margin-left: 2rem;
+}
+/*# sourceMappingURL=adminProduct.css.map */

@@ -7,14 +7,14 @@ html
     link(href='https://meyerweb.com/eric/tools/css/reset/reset200802.css')
     link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin='')
     link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap', rel='stylesheet')
-    link(rel='stylesheet', stylesheet='text/css', href='/css/admin.css')
+    link(rel='stylesheet', stylesheet='text/css', href='/css/adminProduct.css')
   body
     .container.menu-manage
       a(href='#')
         img(src='https://premiumlayers.com/html/royalbakery/images/slider-ic.png')
       .menu-info
-        h5.title Hoàng Long
-        a(href='#') Đăng xuất
+        h5.title=name
+        a(href='/admin/logout') Đăng xuất
       ul.menu_list
         li 
           a(href='/admin/home') Product 
