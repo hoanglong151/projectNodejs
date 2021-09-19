@@ -1,0 +1,31 @@
+extends ../../layouts/layoutAdmin
+block content
+  .section-content
+    .form
+      form(action="")
+        .input-group.mb-5
+          span#basic-addon3.input-group-text.fz-18.p-3 Name
+          input#basic-url.form-control.fz-18.p-3(readonly, type='text', name='name', aria-describedby='basic-addon3', value=result.name)
+        .input-group.mb-5
+          label.input-group-text.fz-18.p-3(for='inputGroupSelect01') Category
+          select#inputGroupSelect01.form-select.fz-18.p-3(disabled="true", name='category')
+            option(selected='') Choose...
+            option(value='1') One
+            option(value='2') Two
+            option(value='3') Three
+        .input-group.mb-5
+          span.input-group-text.fz-18.p-3 Price
+          input.form-control.fz-18.p-3(readonly, type='text', name='price', aria-label='Amount (to the nearest dollar)', value=result.price)
+          span.input-group-text.fz-18.p-3 VNĐ
+        .input-group.mb-5
+          span.input-group-text.fz-18.p-3 Quantity
+          input.form-control.fz-18.p-3(readonly, type='text', name='quantity', aria-label='Amount (to the nearest dollar)', value=result.quantity)
+          span.input-group-text.fz-18.p-3 Bánh
+        .input-group.mb-5
+          span.input-group-text.fz-18.p-3 Description
+          textarea.form-control.fz-18.p-3(readonly, aria-label='With textarea', name='des')=result.description
+        div.mb-5
+          input#formFileLg.form-control.form-control-lg.fz-18(disabled="true", type='file', name='img', multiple)
+        a.btn(style='margin-left: 0rem', href='/admin/product/edit/' + result._id) Edit
+        a.btn(href='/admin/home') Cancel
+

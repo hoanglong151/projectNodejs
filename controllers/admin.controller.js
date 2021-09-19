@@ -1,5 +1,6 @@
-const Account = require('../models/authentication.model');
-const Bake = require('../models/product.model');
+const md5 = require('md5');
+const modelAccount = require('../models/authentication.model');
+const modelBake = require('../models/product.model');
 const login = (req, res) => {
   res.render('admin/authentication/login')
 }
@@ -12,10 +13,44 @@ const logout = (req, res) => {
   res.clearCookie('userID').redirect('/');
 }
 
-const home = (req, res) => {
-  res.render('admin/products/index',{ 
-    name: localStorage.getItem('name')
-  });
+const home = async (req, res) => {
+  try{
+    await modelBake.find({}, (err, bakes) =>{
+      try{
+        res.render('admin/products/index',{ 
+          name: localStorage.getItem('name'),
+          bakes
+        });
+      }catch(e){
+        console.log(e + err)
+      }
+    });
+  }catch(e){
+    console.log(e)
+  }
+}
+
+const editProduct = (req, res) => {
+  modelBake.findOne({_id: req.params.id}, (err, result) =>{
+    if(err) handleError(err);
+    res.render('admin/products/edit',{
+      result
+    })
+  })
+}
+
+const editProductPut = (req, res) => {
+    const updateBake = {
+      name: req.body.name,
+      category: req.body.category,
+      price: req.body.price,
+      quantity: req.body.quantity,
+      description: req.body.des,
+    }
+    modelBake.updateOne({_id: req.params.id}, updateBake, (err, result) =>{
+      if(err) return handleError(err);
+      res.redirect('/admin/home')
+    })
 }
 
 const createProduct = (req, res) => {
@@ -29,30 +64,36 @@ const createProductPost = (req, res) => {
     price: req.body.price,
     quantity: req.body.quantity,
     description: req.body.des,
-    img: req.body.img
-  })
-  Bake.create(newBake, (err, result) => {
+  });
+  modelBake.create(newBake, async (err, result) => {
     if(err) return handleError(err);
-    res.redirect('/admin/home');
+    await res.redirect('/admin/home');
   })
 }
 
 const registerPost = (req, res) => {
   const accountRegister = ({
     name: req.body.name,
-    password: req.body.password,
-    confirmPassword: req.body.confirmPassword,
+    password: md5(req.body.password),
+    confirmPassword: md5(req.body.confirmPassword),
   })
-  Account.create(accountRegister, (err, result) => {
-    if(err) return handleError(err);
-    res.render('admin/authentication/login')
-  })
+
+  if(accountRegister.password === accountRegister.confirmPassword){
+    Account.create(accountRegister, (err, result) => {
+      if(err) return handleError(err);
+      res.render('admin/authentication/login')
+      return;
+    })
+  }else{
+    res.render('admin/authentication/register');
+    return;
+  }
 }
 
 const loginPost = (req, res) => {
-  Account.findOne({name: req.body.name}, (err, account) => {
+  modelAccount.findOne({name: req.body.name}, (err, account) => {
     if(err) return handleError(err);
-    if(account === null || account.password !== req.body.password){
+    if(account === null || account.password !== md5(req.body.password)){
       res.render('admin/authentication/login');
       return;
     }else{
@@ -60,6 +101,22 @@ const loginPost = (req, res) => {
       res.cookie('userID', account._id).redirect('/admin/home');
       return;
     }
+  })
+}
+
+const detailProduct = (req, res) => {
+  modelBake.findOne({_id: req.params.id}, (err, result) => {
+    if(err) return handleError(err);
+    res.render('admin/products/detail', {
+      result
+    })
+  })
+}
+
+const deleteProduct = (req, res) => {
+  modelBake.deleteOne({_id: req.params.id}, (err, result) => {
+    if(err) return handleError(err);
+    res.redirect('back');
   })
 }
 
@@ -72,4 +129,8 @@ module.exports = {
   loginPost,
   createProductPost,
   logout,
+  editProduct,
+  editProductPut,
+  detailProduct,
+  deleteProduct,
 }

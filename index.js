@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const port = 3000;
+const  methodOverride = require('method-override')
 const db = require('./middleware/connectDB.middleware');
 const cookieParser = require('cookie-parser');
 if (typeof localStorage === "undefined" || localStorage === null) {
@@ -9,7 +10,7 @@ if (typeof localStorage === "undefined" || localStorage === null) {
   localStorage = new LocalStorage('./scratch');
 }
 app.use(db)
-
+app.use(methodOverride('_method'))
 const routeHome = require('./routes/home.route');
 const routeAdmin = require('./routes/admin.route');
 app.set('view engine', 'pug');

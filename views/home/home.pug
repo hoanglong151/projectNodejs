@@ -55,14 +55,15 @@ block content
         p.content The day for a three hour tour a three hour tour then one day he was shooting at some food and up through the ground came a oil that is its a beautiful day.
       //- Product List
       .product_list
-        .product_item.d-flex
-          .product_item-image
-            img(src='https://premiumlayers.com/html/royalbakery/images/menu-4.png')
-          .product_item-info
-            h5.title chocolate flash
-              span $20.00
-            p.content The day he wane day he was shooting at some food and up through the ground.
-            a.btn(href='#') order now
+        each bake in bakes
+          .product_item.d-flex
+            .product_item-image
+              img(src='https://premiumlayers.com/html/royalbakery/images/menu-4.png')
+            .product_item-info
+              h5.title=bake.name
+                span=bake.price + $
+              p.content=bake.description
+              a.btn(href='#') order now
     #carousel-info-cookers.carousel.slide(data-bs-ride='carousel')
       .carousel-inner.info-cookers
         .carousel-item.active

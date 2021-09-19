@@ -13,13 +13,46 @@ block content
             th(scope='col') Quantity
             th(scope='col') Action
         tbody
-          tr
-            th(scope='row') 1
-            td Cake
-            td 10.000đ
-            td 2
-            td
-              a(href='#') Edit |
-              a(href='#') Detail |
-              a(href='#') Remove
+          each bake in bakes
+            tr
+              th(scope='row') 1
+              td=bake.name
+              td=bake.price + 'đ'
+              td=bake.quantity
+              td
+                a(href='/admin/product/edit/' + bake._id) Edit |
+                a(href='/admin/product/detail/' + bake._id) Detail |
+                //- a(href='#') Remove
+                button(type='button', data-bs-toggle='modal', data-bs-target='#exampleModal', data-id=bake._id)
+                  | Remove
+
+  #exampleModal.modal.fade(tabindex='-1', aria-labelledby='exampleModalLabel', aria-hidden='true')
+    .modal-dialog
+      .modal-content
+        .modal-header
+          h5#exampleModalLabel.modal-title Do you want Delete?
+          button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close')
+        .modal-body
+          | Delete?
+        .modal-footer
+          button.btn.btn-secondary(type='button', data-bs-dismiss='modal') Close
+          button.btn.btn-primary(type='button', id='deleteProduct') OK
+  form(name="formDelete", method="post")
+  script.
+    window.addEventListener('DOMContentLoaded', e =>{
+      const getID = document.querySelectorAll('button[data-bs-target="#exampleModal"]');
+      const getBtn = document.querySelector('#deleteProduct');
+      const getForm = document.querySelector('form[name="formDelete"]');
+      console.log(getID)
+      getID.forEach((value, index) => {
+        value.onclick = function(){
+          getBtn.onclick = function(){
+            getForm.action = "/admin/product/delete/" + value.getAttribute('data-id') + "?_method=DELETE";
+            getForm.submit();
+          }
+        }
+
+      })
+    })
+
         

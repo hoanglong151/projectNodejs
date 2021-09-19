@@ -1,5 +1,8 @@
 const express = require('express');
 const route = express.Router();
+const path = require('path');
+const multer = require('multer');
+const upload = multer({ dest: path.join(__dirname, '..', 'public', 'uploads')});
 const middleware = require('../middleware/accountDB.middleware');
 
 const controllerAdmin = require('../controllers/admin.controller');
@@ -13,7 +16,14 @@ route.get('/logout', controllerAdmin.logout);
 route.get('/home', middleware, controllerAdmin.home);
 // Create Product
 route.get('/product/create', middleware, controllerAdmin.createProduct);
-route.post('/product/create', middleware, controllerAdmin.createProductPost);
+route.post('/product/create', middleware, upload.single('img'), controllerAdmin.createProductPost);
+// Edit Product
+route.get('/product/edit/:id', middleware, controllerAdmin.editProduct);
+route.put('/product/edit/:id', middleware, controllerAdmin.editProductPut);
+// Detail Product
+route.get('/product/detail/:id', middleware, controllerAdmin.detailProduct);
+// Delete Product
+route.delete('/product/delete/:id', middleware, controllerAdmin.deleteProduct);
 
 
 module.exports = route;
