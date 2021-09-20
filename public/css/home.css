@@ -924,14 +924,14 @@ button {
 
 .product_item {
   position: relative;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   background-color: #fafafa;
-  padding-left: 33rem;
+  padding-left: 39rem;
   padding-top: 4rem;
   padding-right: 4rem;
   padding-bottom: 3rem;
@@ -957,6 +957,14 @@ button {
   position: absolute;
   top: 0;
   left: 0;
+  height: 100%;
+  padding: 1.5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.product_item-info {
+  width: 100%;
 }
 
 .product_item-info h5 {

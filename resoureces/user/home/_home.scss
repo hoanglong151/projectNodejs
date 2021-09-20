@@ -119,10 +119,10 @@
   }
   &_item{
     position: relative;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     background-color: #fafafa;
-    padding-left: 33rem;
+    padding-left: 39rem;
     padding-top: 4rem;
     padding-right: 4rem;
     padding-bottom: 3rem;
@@ -144,6 +144,12 @@
     position: absolute;
     top: 0;
     left: 0;
+    height: 100%;
+    padding: 1.5rem;
+    object-fit: contain
+  }
+  &_item-info {
+    width: 100%;
   }
   &_item-info h5{
     display: flex;

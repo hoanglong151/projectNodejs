@@ -25,7 +25,8 @@ block content
           span.input-group-text.fz-18.p-3 Description
           textarea.form-control.fz-18.p-3(aria-label='With textarea', name='des')
         div.mb-5
-          input#formFileLg.form-control.form-control-lg.fz-18(type='file', name='img', multiple)
+          input#formFileLg.form-control.form-control-lg.fz-18(type='file', name='image', multiple)
+          input(type='text', name='imagelink', hidden)
         button.btn Create
         a.btn(href='/admin/home') Cancel
 

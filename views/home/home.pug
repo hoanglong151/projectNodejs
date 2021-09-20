@@ -58,10 +58,10 @@ block content
         each bake in bakes
           .product_item.d-flex
             .product_item-image
-              img(src='https://premiumlayers.com/html/royalbakery/images/menu-4.png')
+              img(src=bake.image)
             .product_item-info
               h5.title=bake.name
-                span=bake.price + $
+                span=bake.price + 'đ'
               p.content=bake.description
               a.btn(href='#') order now
     #carousel-info-cookers.carousel.slide(data-bs-ride='carousel')

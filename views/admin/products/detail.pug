@@ -24,8 +24,10 @@ block content
         .input-group.mb-5
           span.input-group-text.fz-18.p-3 Description
           textarea.form-control.fz-18.p-3(readonly, aria-label='With textarea', name='des')=result.description
-        div.mb-5
+        div.mb-5(hidden)
           input#formFileLg.form-control.form-control-lg.fz-18(disabled="true", type='file', name='img', multiple)
+        div.mb-5
+          img(src=result.image)
         a.btn(style='margin-left: 0rem', href='/admin/product/edit/' + result._id) Edit
         a.btn(href='/admin/home') Cancel
 
